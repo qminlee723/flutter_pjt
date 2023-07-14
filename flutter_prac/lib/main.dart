@@ -195,19 +195,51 @@ void main() {
 //   }
 // }
 
+// // 5.5.2 SizedBox Widget
+// class DesignApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: Center(
+//           child: SizedBox(
+//             height: 200.0,
+//             width: 200.0,
+//
+//             // SizedBox는 색상이 없음
+//             child: Container(
+//               color: Colors.purple,
+//             )
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+
+// 5.5.3 Padding Widget / Margin
 class DesignApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: SizedBox(
-            height: 200.0,
-            width: 200.0,
+          child: Container(
+            color: Colors.pink,
 
-            // SizedBox는 색상이 없음
             child: Container(
-              color: Colors.purple,
+              color: Colors.purpleAccent,
+              margin: EdgeInsets.all(16.0),
+              child: Padding(
+                padding:EdgeInsets.all(16.0),
+                  child: Container(
+                    color: Colors.black,
+                    width: 50,
+                    height: 50,
+                  )
+              ),
+
             )
           )
         )
@@ -215,4 +247,3 @@ class DesignApp extends StatelessWidget {
     );
   }
 }
-
