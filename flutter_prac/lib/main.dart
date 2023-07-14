@@ -219,27 +219,53 @@ void main() {
 
 
 // 5.5.3 Padding Widget / Margin
+// class DesignApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: Center(
+//           child: Container(
+//             color: Colors.pink,
+//
+//             child: Container(
+//               color: Colors.purpleAccent,
+//               margin: EdgeInsets.all(16.0),
+//               child: Padding(
+//                 padding:EdgeInsets.all(16.0),
+//                   child: Container(
+//                     color: Colors.black,
+//                     width: 50,
+//                     height: 50,
+//                   )
+//               ),
+//
+//             )
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+// 5.5.4 SafeArea
+// 플러터는 가용되는 화면을 모두 사용하기 때문에, 노치가 있는 핸드폰에서 노치에 위젯들이 가릴 수 있습니다
+// SafeArea위젯을 사용하면, 따로 기기별로 예외 처리를 하지 않고도 안전한 화면에서만 위젯을 그릴 수 있습니다
 class DesignApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Container(
-            color: Colors.pink,
-
+          child: SafeArea(
+            top: true,
+            bottom: true,
+            left: true,
+            right: true,
             child: Container(
-              color: Colors.purpleAccent,
-              margin: EdgeInsets.all(16.0),
-              child: Padding(
-                padding:EdgeInsets.all(16.0),
-                  child: Container(
-                    color: Colors.black,
-                    width: 50,
-                    height: 50,
-                  )
-              ),
-
+              color: Colors.red,
+              height: 300.0,
+              width: 300.0,
             )
           )
         )
