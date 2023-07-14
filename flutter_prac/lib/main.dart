@@ -143,21 +143,56 @@ import 'package:flutter/material.dart';
 // }
 
 // 5.4.4 FloatingActionButton 위젯
+// void main() {
+//   runApp(FloatingActionButtonExample());
+// }
+//
+// class FloatingActionButtonExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: () {},
+//           child: Text('클릭'),
+//         ),
+//         body: Container(),
+//       )
+//     );
+//   }
+// }
+
+
 void main() {
-  runApp(FloatingActionButtonExample());
+  runApp(DesignApp());
 }
 
-class FloatingActionButtonExample extends StatelessWidget {
+// 5.5 디자인 관련 위젯
+// 5.5.1 Container 위젯
+class DesignApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Text('클릭'),
-        ),
-        body: Container(),
+        body: Center(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.red,
+              border: Border.all(
+                width: 16.0,
+                color: Colors.black,
+              ),
+                borderRadius: BorderRadius.circular(
+                16.0,
+            ),
+            ),
+            height: 200.0,
+            width: 100.0,
+          )
+        )
       )
     );
   }
 }
+
+
