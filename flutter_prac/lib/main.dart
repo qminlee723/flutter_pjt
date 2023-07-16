@@ -163,9 +163,9 @@ import 'package:flutter/material.dart';
 // }
 
 
-void main() {
-  runApp(DesignApp());
-}
+// void main() {
+//   runApp(DesignApp());
+// }
 
 // 5.5 디자인 관련 위젯
 // 5.5.1 Container 위젯
@@ -251,22 +251,67 @@ void main() {
 // 5.5.4 SafeArea
 // 플러터는 가용되는 화면을 모두 사용하기 때문에, 노치가 있는 핸드폰에서 노치에 위젯들이 가릴 수 있습니다
 // SafeArea위젯을 사용하면, 따로 기기별로 예외 처리를 하지 않고도 안전한 화면에서만 위젯을 그릴 수 있습니다
-class DesignApp extends StatelessWidget {
+// class DesignApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: Center(
+//           child: SafeArea(
+//             top: true,
+//             bottom: true,
+//             left: true,
+//             right: true,
+//             child: Container(
+//               color: Colors.red,
+//               height: 300.0,
+//               width: 300.0,
+//             )
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+
+
+// 5.6 배치 관련 위젯
+void main() {
+  runApp(RowWidgetExample());
+}
+// 5.6.1 Row 위젯
+class RowWidgetExample extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: SafeArea(
-            top: true,
-            bottom: true,
-            left: true,
-            right: true,
-            child: Container(
-              color: Colors.red,
-              height: 300.0,
-              width: 300.0,
-            )
+        body: SizedBox(
+          height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.red,
+                ),
+
+                const SizedBox(width: 12.0),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.green,
+                ),
+                const SizedBox(width: 12.0),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.blue,
+                )
+              ],
           )
         )
       )
