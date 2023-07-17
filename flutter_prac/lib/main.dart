@@ -372,33 +372,53 @@ void main() {
 // }
 
 // 5.6.3 Flexible 위젯
+// class ColumnWidgetExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: SizedBox(
+//
+//           width: double.infinity,
+//           child: Column(
+//             children: [
+//               // flex는 남은 공간을 차지할 비율
+//               // flex값을 제공하지 않으면 기본값은 1
+//               Flexible(
+//                 flex: 1,
+//
+//                 child: Container(
+//                   color: Colors.blue,
+//                 ),
+//               ),
+//
+//               Flexible(
+//                 flex: 1,
+//
+//                 child: Container(
+//                     color: Colors.red
+//                 ),
+//               ),
+//             ],
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+// 5.6.4 Expanded 위젯
 class ColumnWidgetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SizedBox(
-
           width: double.infinity,
           child: Column(
             children: [
-              // flex는 남은 공간을 차지할 비율
-              // flex값을 제공하지 않으면 기본값은 1
-              Flexible(
-                flex: 1,
-
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-
-              Flexible(
-                flex: 1,
-
-                child: Container(
-                    color: Colors.red
-                ),
-              ),
+              Expanded(child: Container(color: Colors.blue)),
+              Expanded(child: Container(color: Colors.red)),
             ],
           )
         )
