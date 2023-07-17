@@ -277,41 +277,94 @@ import 'package:flutter/material.dart';
 
 
 // 5.6 배치 관련 위젯
-void main() {
-  runApp(RowWidgetExample());
-}
 // 5.6.1 Row 위젯
-class RowWidgetExample extends StatelessWidget {
+
+// void main() {
+//   runApp(RowWidgetExample());
+// }
+
+// class RowWidgetExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: SizedBox(
+//           height: double.infinity,
+//           child: Row(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//
+//               children: [
+//                 Container(
+//                   height: 50.0,
+//                   width: 50.0,
+//                   color: Colors.red,
+//                 ),
+//
+//                 const SizedBox(width: 12.0),
+//                 Container(
+//                   height: 50.0,
+//                   width: 50.0,
+//                   color: Colors.green,
+//                 ),
+//                 const SizedBox(width: 12.0),
+//                 Container(
+//                   height: 50.0,
+//                   width: 50.0,
+//                   color: Colors.blue,
+//                 )
+//               ],
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+// 5.6.2 Column 위젯
+void main() {
+  runApp(ColumnWidgetExample());
+}
+
+class ColumnWidgetExample extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SizedBox(
-          height: double.infinity,
-          child: Row(
+
+          // 너비를 최대한으로 설정
+          // 반대축에서 이동할 공간을 제공해주기 위해
+          width: double.infinity,
+          child: Column(
+
+            // 주축 정렬 지정
             mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            // 반대축 정렬
+            crossAxisAlignment: CrossAxisAlignment.center,
 
-              children: [
-                Container(
-                  height: 50.0,
-                  width: 50.0,
-                  color: Colors.red,
-                ),
+            children: [
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.red,
+              ),
 
-                const SizedBox(width: 12.0),
-                Container(
-                  height: 50.0,
-                  width: 50.0,
-                  color: Colors.green,
-                ),
-                const SizedBox(width: 12.0),
-                Container(
-                  height: 50.0,
-                  width: 50.0,
-                  color: Colors.blue,
-                )
-              ],
+              // SizedBox는 일반적으로 공백을 생성할 때 사용
+              const SizedBox(width: 12.0),
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.green,
+              ),
+
+              const SizedBox(width: 12.0),
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.blue,
+              )
+            ],
           )
         )
       )
