@@ -408,6 +408,26 @@ void main() {
 // }
 
 // 5.6.4 Expanded 위젯
+// class ColumnWidgetExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         body: SizedBox(
+//           width: double.infinity,
+//           child: Column(
+//             children: [
+//               Expanded(child: Container(color: Colors.blue)),
+//               Expanded(child: Container(color: Colors.red)),
+//             ],
+//           )
+//         )
+//       )
+//     );
+//   }
+// }
+
+// 5.6.5 Stack 위젯
 class ColumnWidgetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -415,14 +435,29 @@ class ColumnWidgetExample extends StatelessWidget {
       home: Scaffold(
         body: SizedBox(
           width: double.infinity,
-          child: Column(
-            children: [
-              Expanded(child: Container(color: Colors.blue)),
-              Expanded(child: Container(color: Colors.red)),
-            ],
+          child: Stack(
+              children: [
+                Container(
+                  height: 300.0,
+                  width: 300.0,
+                  color: Colors.red,
+                ),
+
+                Container(
+                  height: 250.0,
+                  width: 250.0,
+                  color: Colors.yellow,
+                ),
+
+                Container(
+                  height: 200.0,
+                  width: 200.0,
+                  color: Colors.blue,
+                )
+              ],
+            )
           )
         )
-      )
-    );
+      );
   }
 }
